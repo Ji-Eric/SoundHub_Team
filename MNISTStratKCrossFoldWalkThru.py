@@ -12,7 +12,7 @@ X, y = fetch_openml('mnist_784', version=1, return_X_y=True)
 X = X.to_numpy() # shape:(70000, 784)
 y = y.to_numpy().astype(int)  #string labels like '5' to ints
 print("Full dataset shape:", X.shape, y.shape)
-#Stat k-fold#######
+#Start k-fold#######
 #doing 3 splits, split size is ~46666 training, ~23334 testing
 #essentially, stratified part of this, is that if entire data set has say ~10% images labeled at 8, in each of our folds, we'll 
 #get around ~10% of data trained on images labeled as 8
