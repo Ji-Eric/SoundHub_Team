@@ -17,19 +17,19 @@ It is recommended to use a Python virtual environment for package management and
 ### 1. Create Virtual Environment
 
 ```bash
-python3 -m venv venv
+python3 -m venv soundhub
 ```
 
 ### 2. Activate Virtual Environment
 
 - On macOS/Linux:
   ```bash
-  source venv/bin/activate
+  source soundhub/bin/activate 
   ```
 
 - On Windows:
   ```bash
-  venv\Scripts\activate
+  soundhub\Scripts\activate
   ```
 
 ### 3. Upgrade pip
