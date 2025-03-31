@@ -2,11 +2,16 @@
 
 This project performs binary and multi-class classification of bioacoustic audio embeddings using a **Stratified K-Fold Cross-Validation** approach. It leverages pre-trained embedding models from the **OpenSoundscape** library and evaluates model performance using ROC AUC scores.
 
-## Project Structure
+---
 
-- **train_on_embeddings_kfold_copy.ipynb** — Main notebook for running classification experiments.
-- **requirements.txt** — List of required Python packages.
-- **data/** — Folder to store audio data and embeddings (not included, needs to be prepared by the user).
+## 📂 Project Structure
+
+```
+├── train_on_embeddings_kfold_copy.ipynb  # Main notebook
+├── requirements.txt                      # Dependencies list
+├── README.md                             # Project instructions
+└── data/                                 
+```
 
 ---
 
@@ -16,21 +21,16 @@ It is recommended to use a Python virtual environment for package management and
 
 ### 1. Create Virtual Environment
 
+Using **conda**:
 ```bash
-python3 -m venv soundhub
+conda create -n soundhub python=3.10
 ```
 
 ### 2. Activate Virtual Environment
 
-- On macOS/Linux:
-  ```bash
-  source soundhub/bin/activate 
-  ```
-
-- On Windows:
-  ```bash
-  soundhub\Scripts\activate
-  ```
+```bash
+conda activate soundhub
+```
 
 ### 3. Upgrade pip
 
@@ -46,19 +46,25 @@ pip install -r requirements.txt
 
 ---
 
-## Running the Notebook
+### (Optional) Register Environment as Jupyter Kernel
 
-Once the environment is set up:
+If you want to run the notebook in this conda environment:
 
-```bash
-jupyter notebook
-```
+1. Install ipykernel:
+   ```bash
+   conda install ipykernel
+   ```
 
-and open **train_on_embeddings_kfold_copy.ipynb** to run the experiments.
+2. Add the environment as a Jupyter kernel:
+   ```bash
+   python -m ipykernel install --user --name soundhub --display-name "Python (soundhub)"
+   ```
 
+After this, you can select **Python (soundhub)** as your kernel in Jupyter Notebook.
 
+-
 
-## Main Dependencies
+## 📦 Main Dependencies
 
 - numpy
 - pandas
@@ -68,3 +74,8 @@ and open **train_on_embeddings_kfold_copy.ipynb** to run the experiments.
 - opensoundscape
 - bioacoustics-model-zoo
 
+The project uses models from the **Bioacoustics Model Zoo**. To install the model zoo package manually (if needed):
+
+```bash
+pip install git+https://github.com/kitzeslab/bioacoustics-model-zoo
+```
